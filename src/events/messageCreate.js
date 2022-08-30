@@ -3,7 +3,19 @@ const { log } = require('../helpers/log');
 
 module.exports = async (message, client) => {
   const prefix = '!';
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (!message.content.startsWith(prefix) || message.author.bot) {
+    if (
+      message.content.toLowerCase().includes('quoi') ||
+      message.content.toLowerCase().includes('koi') ||
+      message.content.toLowerCase().includes('kwa') ||
+      message.content.toLowerCase().includes('qoi')
+    ) message.reply('feur');
+    if (
+      message.content.toLowerCase().includes('pq') ||
+      message.content.toLowerCase().includes('pk')
+    ) message.reply('pour feur');
+    return;
+  }
 
   const args = message.content.slice(prefix.length).trim().split(' ');
   const command = args.shift().toLowerCase();
