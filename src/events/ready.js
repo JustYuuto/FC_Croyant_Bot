@@ -8,7 +8,7 @@ module.exports = async (client) => {
   log('info', `Logged in as ${chalk.bold(client.user.tag)}`);
 
   const statuses = [
-    [`le goat`, ActivityType.Watching],
+    [`NetherMC le GOAT`, ActivityType.Watching],
   ];
   
   let i = 0;
