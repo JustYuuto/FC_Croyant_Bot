@@ -13,5 +13,8 @@ module.exports = {
         for await (const line of rl){
             words.push(line);
         }
+    },
+    getWords(){
+        return words;
     }
 }
