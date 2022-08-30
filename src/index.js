@@ -4,6 +4,7 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v10');
 const { log } = require('./helpers/log');
 const { async } = require('./helpers/functions');
+const AnswerConfig = require('./config/AnswerConfig');
 require('dotenv').config();
 
 const client = new Client({
@@ -36,6 +37,7 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
 async(async () => {
+  await AnswerConfig.loadWords();
   try {
     log('info', 'Started refreshing application slash commands...');
 
